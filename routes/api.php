@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::get('/user','User@get_all');
+Route::post('/ionic', 'Auth\LoginController@inicio')->name('login');
+Route::get('/user','UserController@get_all');
 Route::post('/user/update','UserController@update');
